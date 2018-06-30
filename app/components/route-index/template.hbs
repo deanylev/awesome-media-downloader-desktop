@@ -1,0 +1,20 @@
+<div class="container text-center text-light">
+  <br>
+  <h1 class="display-4">Awesome Media Downloader</h1>
+  <br>
+  <form {{action "download" on="submit"}}>
+    <div class="form-group">
+      {{input class="form-control" type="text" value=url}}
+    </div>
+    {{#spin-button class="btn btn-primary btn-lg btn-block" buttonStyle="zoom-out" type="submit" disabled=disabled action=(action "download")}}Download{{/spin-button}}
+    <br>
+    <h4 class="status font-weight-light text-{{statusClass}}">{{status}}</h4>
+    <br>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: {{progress}}%">
+        <span>{{#if progress}}{{progress}}%{{/if}}</span>
+      </div>
+    </div>
+    <br><br>
+  </form>
+</div>
